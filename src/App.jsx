@@ -15,7 +15,7 @@ const MovieActors = ReactLazy('MovieActors');
 export const App = () => {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/goit-react-hw-05-movies/">
         <Suspense fallback={<Pending />}>
           <Routes>
             <Route path="/" element={<AppBar />}>
