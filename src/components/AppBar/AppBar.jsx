@@ -28,8 +28,8 @@ export default function AppBar() {
           >
             Go back
           </Button>
-          <StyledNavLink to="/">Home</StyledNavLink>
-          <StyledNavLink to="/movies">Movies</StyledNavLink>
+          <StyledNavLink to="/goit-react-hw-05-movies/">Home</StyledNavLink>
+          <StyledNavLink to="/goit-react-hw-05-movies/movies">Movies</StyledNavLink>
         </Navigation>
       </header>
       <MainContainer>

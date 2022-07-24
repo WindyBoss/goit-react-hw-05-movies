@@ -12,7 +12,9 @@ export const useFetchParams = ({ init, apiState, fetchAPI }) => {
         setState(data);
         apiState.success();
       })
-      .catch(error => apiState.error());
+      .catch(error => {
+        apiState.error()
+      });
   }, [apiState, fetchAPI, params]);
 
   return state;

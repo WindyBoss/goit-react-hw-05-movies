@@ -20,13 +20,13 @@ function MovieActors({ apiState }) {
     <SectionContainer isEmpty={state?.cast?.length > 0 ? false : true}>
       {apiState.isSuccess() && <MovieActorsList actors={state.cast} />}
       {apiState.isPending() && <Pending />}
-      {apiState.isError() && <div>There is no Information</div>}
-      {apiState.isIdle() && (
+      {apiState.isError() && (
         <ErrorHandler
           errorMessage="Oops, there is no information about actors, try please later"
           toastErrorMessage="Oops, something went wrong, try please later"
         />
       )}
+      {apiState.isIdle() && <div>No information</div>}
     </SectionContainer>
   );
 }

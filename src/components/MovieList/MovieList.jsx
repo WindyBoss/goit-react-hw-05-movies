@@ -12,8 +12,8 @@ export default function MovieList({ movies }) {
           <NavLink
             to={
               location.pathname.length < 2
-                ? `movies/${movie.id}`
-                : `${movie.id}`
+                ? `/goit-react-hw-05-movies/movies/${movie.id}`
+                : `/goit-react-hw-05-movies/movies/${movie.id}`
             }
             state={location}
           >

@@ -11,21 +11,22 @@ const MoviesPage = ReactLazy('MoviesPage');
 const MovieDetailPage = ReactLazy('MovieDetailPage');
 const MovieReviews = ReactLazy('MovieReviews');
 const MovieActors = ReactLazy('MovieActors');
+const NoFoundRoute = React.lazy(() => import('./components/NoFoundRoute'));
 
 export const App = () => {
   return (
     <>
-      <BrowserRouter basename="/goit-react-hw-05-movies/">
+      <BrowserRouter>
         <Suspense fallback={<Pending />}>
           <Routes>
-            <Route path="/" element={<AppBar />}>
-              <Route index path="" element={<HomePage />} />
-              <Route path="movies" element={<MoviesPage />} />
-              <Route path="movies/:movieId" element={<MovieDetailPage />}>
+            <Route path="/goit-react-hw-05-movies/" element={<AppBar />}>
+              <Route index element={<HomePage />} />
+              <Route path="/goit-react-hw-05-movies/movies" element={<MoviesPage />} />
+              <Route path="/goit-react-hw-05-movies/movies/:movieId" element={<MovieDetailPage />}>
                 <Route path="actors" element={<MovieActors />} />
                 <Route path="reviews" element={<MovieReviews />} />
               </Route>
-              <Route path="*" element={<div>nothing found</div>} />
+              <Route path="*" element={<NoFoundRoute/>} />
             </Route>
           </Routes>
         </Suspense>
